@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 15:30:51 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/19 16:36:28 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/20 15:37:19 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,28 @@
 #include "WrongCat.hpp"
 
 int main() {
+    std::cout << "-------------------CONSTRUCTORS------------------" << std::endl;
     const Animal* meta = new Animal();
+    const Dog* dog = new Dog();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     const WrongAnimal* wrong = new WrongCat();
     
-    std::cout << j->getType() << " " << std::endl; 
-    std::cout << i->getType() << " " << std::endl;
-    std::cout << meta->getType() << " " << std::endl;
-    std::cout << wrong->getType() << " " << std::endl;
+    std::cout << "----------------------TYPES----------------------" << std::endl;
+    std::cout << j->getType() << std::endl;
+    std::cout << dog->getType() << std::endl;
+    std::cout << i->getType() << std::endl;
+    std::cout << meta->getType() << std::endl;
+    std::cout << wrong->getType() << std::endl;
     
-    i->makeSound(); 
+    std::cout << "---------------------SOUNDS----------------------" << std::endl;
     j->makeSound();
+    dog->makeSound();
+    i->makeSound(); 
     meta->makeSound();
     wrong->makeSound();
 
+    std::cout << "-------------------DESTRUCTORS-------------------" << std::endl;
     delete meta,
     delete j;
     delete i;

@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 15:29:56 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/19 16:28:19 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/20 15:24:23 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Animal {
         Animal();
         Animal(const Animal & other);
         Animal & operator=(const Animal & other);
-        ~Animal();
+        virtual ~Animal();
         
-        void makeSound() const;
+        virtual void makeSound() const; //dynamic function or virtual member function (that will be overridden)
         std::string getType() const;
 
     protected:

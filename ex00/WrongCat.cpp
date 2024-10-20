@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:23:44 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/19 16:36:23 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/20 15:25:45 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,8 @@ WrongCat & WrongCat::operator=(const WrongCat & other){
 
 WrongCat::~WrongCat(){
     std::cout << "WrongCat destructor called" << std::endl;
+}
+
+void WrongCat::makeSound() const {
+    std::cout << "WrongMeow" << std::endl;
 }
