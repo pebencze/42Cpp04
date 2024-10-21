@@ -26,3 +26,32 @@ class Cat : public Animal {
 };
 
 ```
+
+## Deep vs. Shallow Copies
+A shallow copy duplicates an object's memory address, not the actual data it points to. This means that the original and the copy point to the same memory location. While shallow copying is fast, it can lead to issues such as dangling pointers, memory leaks, and unintended data modification if not used carefully. A deep copy allocates memory and duplicates the data that the object points to. This is why a custom copy constructor and assigment operator are useful.
+
+```c++
+class Cat : public Animal {
+    public:
+        ...
+    private:
+        Brain *brain;
+};
+
+Cat & Cat::operator=(const Cat & other){
+    if (this != &other){
+        this->_type = other._type;
+        this->brain = new Brain(); //DEEP COPY
+        *(this->brain) = *(other.brain); //DEEP COPY
+    }
+    return *this;
+}
+
+WrongCat & WrongCat::operator=(const WrongCat & other){
+    if (this != &other){
+        this->_type = other._type;
+        this->brain = other.brain; //SHALLOW COPY
+    }
+    return *this;
+}
+```
