@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wrongcat.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:22:14 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/20 15:25:34 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/21 11:15:04 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,11 @@ class WrongCat : public WrongAnimal {
         ~WrongCat();
 
         void makeSound() const;
+
+        const std::string getIdea(int n) const;
+        void setIdea(int n, std::string idea);
+
+    private:
+        Brain *brain;
+        
 };
