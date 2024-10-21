@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 15:30:15 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/21 12:15:16 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/21 12:34:53 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ std::string AAnimal::getType() const{
 }
 
 void AAnimal::makeSound() const {
-    //std::cout << "Animal sound" << std::endl;
+    //no implementation of pure virtual method
 }

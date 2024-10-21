@@ -55,3 +55,21 @@ WrongCat & WrongCat::operator=(const WrongCat & other){
     return *this;
 }
 ```
+
+## Abstract Classes
+Sometimes implementation of all functions cannot be provided in a base class because we don’t know the implementation, e.g. all animals move, but there is no general move function. Such a class is called an abstract class, having the syntax of **AClass**
+A pure virtual function (or abstract function) in C++ is a virtual function for which we can have an implementation, But we must override that function in the derived class, otherwise, the derived class will also become an abstract class. A pure virtual function is declared by assigning 0 in the declaration.
+
+```c++
+//correct:
+virtual void makeSound() const = 0;
+
+//wrong:
+void makeSound() const = 0;
+error: 'makeSound' is not virtual and cannot be declared pure
+
+//children classes have to have the implementation of the pure virtual methods,
+//otherwise they become abstract as well
+./AAnimal.hpp:25:22: note: unimplemented pure virtual method 'makeSound' in 'Cat'
+        virtual void makeSound() const = 0;
+```
