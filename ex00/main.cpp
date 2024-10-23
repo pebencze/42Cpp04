@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 15:30:51 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/20 15:37:19 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/23 15:16:22 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,27 @@ int main() {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     const WrongAnimal* wrong = new WrongCat();
-    
+
     std::cout << "----------------------TYPES----------------------" << std::endl;
     std::cout << j->getType() << std::endl;
     std::cout << dog->getType() << std::endl;
     std::cout << i->getType() << std::endl;
     std::cout << meta->getType() << std::endl;
     std::cout << wrong->getType() << std::endl;
-    
+
     std::cout << "---------------------SOUNDS----------------------" << std::endl;
     j->makeSound();
     dog->makeSound();
-    i->makeSound(); 
+    i->makeSound();
     meta->makeSound();
     wrong->makeSound();
 
     std::cout << "-------------------DESTRUCTORS-------------------" << std::endl;
-    delete meta,
+    delete meta;
+	delete dog;
     delete j;
     delete i;
     delete wrong;
-    
-    return 0; 
+
+    return 0;
 }
