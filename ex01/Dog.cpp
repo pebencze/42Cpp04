@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 15:30:46 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/21 11:01:33 by pbencze          ###   ########.fr       */
+/*   Updated: 2025/02/12 17:27:01 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Dog::Dog(const Dog & other){
 Dog & Dog::operator=(const Dog & other){
     if (this != &other){
         this->_type = other._type;
+		if (this->brain != NULL)
+			delete this->brain;
         this->brain = new Brain(); //DEEP COPY
         *(this->brain) = *(other.brain); //DEEP COPY
     }

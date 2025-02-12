@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 15:30:39 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/21 11:04:24 by pbencze          ###   ########.fr       */
+/*   Updated: 2025/02/12 17:23:42 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Cat::Cat(const Cat & other){
 Cat & Cat::operator=(const Cat & other){
     if (this != &other){
         this->_type = other._type;
+		if (this->brain != NULL)
+			delete this->brain;
         this->brain = new Brain(); //DEEP COPY
         *(this->brain) = *(other.brain); //DEEP COPY
     }
